@@ -1,0 +1,17 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model MyDeatails{
+  ID Int @unique @default(autoincrement())
+  Name String 
+  MobileNumber Int
+  Message String
+  SumbitDate DateTime @default(now())
+}
